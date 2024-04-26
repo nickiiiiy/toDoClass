@@ -1,0 +1,29 @@
+.todo-list {
+  display: flex;
+  justify-content: space-between;
+
+  border: 1px solid;
+  border-radius: 20px;
+  padding: 10px 10px;
+  align-items: center;
+
+  &__group {
+    display: flex;
+    align-items: center;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 5px;
+  }
+
+  &__delete,
+  &__edit {
+    border: none;
+    border-radius: 5px;
+  }
+  &__label {
+    display: flex;
+    align-items: center;
+  }
+}

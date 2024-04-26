@@ -1,0 +1,28 @@
+.add-task {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+  }
+
+  &__input {
+    padding: 5px 10px;
+    border: 1px solid;
+    border-radius: 5px;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__btn {
+    height: 20px;
+    width: 20px;
+    padding: 0;
+    border: none;
+    background: none;
+  }
+}
