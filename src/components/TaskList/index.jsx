@@ -1,20 +1,46 @@
 import React, { Component } from "react";
+import EditingTaskForm from "../EditingTaskForm";
 import TaskItem from "../TaskItem";
 import "./styles.scss";
 
 class TaskList extends Component {
   render() {
-    const { tasks, handleCheckboxChange, deleteTask } = this.props;
+    const {
+      tasks,
+      handleCheckboxChange,
+      isChecked,
+      deleteTask,
+      updatedTask,
+      idUpdatedTask,
+      errorEditing,
+      handleEditTask,
+      handleInputChange,
+      checkEditingValidation,
+      cancelEditing,
+    } = this.props;
 
     return (
       <ul className="tasks">
         {tasks.map((task) => (
-          <TaskItem
-            key={task.id}
-            task={task}
-            handleCheckboxChange={handleCheckboxChange}
-            deleteTask={deleteTask}
-          />
+          <div key={task.id} className="">
+            {task.id === idUpdatedTask ? (
+              <EditingTaskForm
+                updatedTask={updatedTask}
+                errorEditing={errorEditing}
+                handleInputChange={handleInputChange}
+                checkEditingValidation={checkEditingValidation}
+                cancelEditing={cancelEditing}
+              />
+            ) : (
+              <TaskItem
+                task={task}
+                handleCheckboxChange={handleCheckboxChange}
+                isChecked={isChecked}
+                deleteTask={deleteTask}
+                handleEditTask={handleEditTask}
+              />
+            )}
+          </div>
         ))}
       </ul>
     );
